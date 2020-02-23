@@ -8,28 +8,29 @@
 
 
     <fragment
-        android:id="@+id/titleFragment"
-        android:name="com.example.jogodemimica.screens.title.TitleFragment"
-        android:label="TitleFragment" >
+      android:id="@+id/titleFragment"
+      android:name="com.example.jogodemimica.screens.title.TitleFragment"
+      android:label="@string/app_name">
         <action
-            android:id="@+id/action_titleFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+          android:id="@+id/action_titleFragment_to_gameFragment"
+          app:destination="@id/gameFragment" />
     </fragment>
     <fragment
-        android:id="@+id/gameFragment"
-        android:name="com.example.jogodemimica.screens.game.GameFragment"
-        android:label="GameFragment" >
+      android:id="@+id/gameFragment"
+      android:name="com.example.jogodemimica.screens.game.GameFragment"
+      android:label="@string/app_name">
         <action
-            android:id="@+id/action_gameFragment_to_scoreFragment"
-            app:destination="@id/scoreFragment" />
+          android:id="@+id/action_gameFragment_to_scoreFragment"
+          app:destination="@id/scoreFragment"
+          app:popUpTo="@+id/titleFragment" />
     </fragment>
     <fragment
-        android:id="@+id/scoreFragment"
-        android:name="com.example.jogodemimica.screens.score.ScoreFragment"
-        android:label="ScoreFragment" >
+      android:id="@+id/scoreFragment"
+      android:name="com.example.jogodemimica.screens.score.ScoreFragment"
+      android:label="@string/app_name">
         <action
-            android:id="@+id/action_scoreFragment_to_gameFragment"
-            app:destination="@id/gameFragment"
-            app:popUpTo="@+id/titleFragment" />
+          android:id="@+id/action_scoreFragment_to_gameFragment"
+          app:destination="@id/gameFragment"
+          app:popUpTo="@+id/titleFragment" />
     </fragment>
 </navigation>

@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModel
 class GameViewModel : ViewModel()
 {
 
-  val listOfWords = listOf("Banana","Mobile","Phone")
+  /** List of words to be used */
+  val listOfWords = mutableListOf("Banana","Mobile","Phone")
+
   /**Live Data*/
   //the word to be shown
   val _word = MutableLiveData<String>()
@@ -18,14 +20,44 @@ class GameViewModel : ViewModel()
   val score: LiveData<Int>
     get() = _score
 
+  //is game finished
+  val _isGameOver = MutableLiveData<Boolean>()
+  val isGameOver : LiveData<Boolean>
+    get() = _isGameOver
+
   init
   {
     _score.value = 0
     _word.value = "Almeida"
+    _isGameOver.value = false
   }
 
-  fun onNextWord()
+  /** Button Listeners */
+  fun onCorrect()
   {
+    nextWord()
+    _score.value = _score.value?.plus(1)
+  }
+
+  fun onSkip()
+  {
+    nextWord()
+    _score.value = _score.value?.minus(1)
+  }
+
+  /** Randomizes the words*/
+  fun nextWord()
+  {
+    if(listOfWords.isEmpty())
+    {
+      _isGameOver.value = true
+    }
+    else
+    {
+      _word.value = listOfWords.removeAt(0)
+      listOfWords.shuffle()
+    }
+
   }
 
 }

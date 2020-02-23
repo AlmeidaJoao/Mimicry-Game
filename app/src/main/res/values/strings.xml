@@ -5,10 +5,11 @@
     <string name="next_word">Proxima</string>
     <string name="score_formatting">Pontuacao: %d</string>
     <string name="score_info">A pontuacao final:</string>
-    <string name="word_formatting">\"%s"\</string>
+    <string name="word_formatting">\"%s\"</string>
     <string name="play_again">Jogar Novamente</string>
     <string name="instructions">Instrucoes</string>
     <string name="add_new">Adicionar novas palavras</string>
+    <string name="the_word_is">A palavra é</string>
     <string name="rules_text">
         Para iniciar o jogo pressione no botao JOGAR,
     cada equipa devera escolher uma pessoa para segurar e tentar adivinhar a palavra

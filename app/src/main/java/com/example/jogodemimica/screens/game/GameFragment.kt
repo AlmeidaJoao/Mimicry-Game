@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 
 import com.example.jogodemimica.R
 import com.example.jogodemimica.databinding.GameFragmentBinding
@@ -35,8 +37,20 @@ class GameFragment : Fragment()
     binding.gameViewModel = viewModel
     binding.lifecycleOwner = this
 
+    /** Lifecylce Observers*/
+
+    viewModel._isGameOver.observe(this.viewLifecycleOwner,Observer{isGameOver ->
+      if(isGameOver)
+      {
+        endGame()
+      }
+    })
+
     return binding.root
   }
+
+  fun endGame() = findNavController().navigate(GameFragmentDirections.actionGameFragmentToScoreFragment())
+
 
 
 }
