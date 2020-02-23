@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Jogo de Mimica</string>
+    <string name="play_button">Jogar</string>
+    <string name="skip_button">Saltar</string>
+    <string name="next_word">Proxima</string>
+    <string name="score_formatting">Pontuacao: %d</string>
+    <string name="score_info">A pontuacao final:</string>
+    <string name="word_formatting">\"%s"\</string>
+    <string name="play_again">Jogar Novamente</string>
+    <string name="instructions">Instrucoes</string>
+    <string name="add_new">Adicionar novas palavras</string>
+    <string name="rules_text">
+        Para iniciar o jogo pressione no botao JOGAR,
+    cada equipa devera escolher uma pessoa para segurar e tentar adivinhar a palavra
+    o telemovel devera ser posicionado num lugar onde a pessoa segurando o telemovel
+    nao o possa ver de preferencia na testa. Para  cada palavra certa +1 ponto e errada -1. Good Luck</string>
+
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <!-- Button Styles-->
+
+    <!-- Normal Button -->
+    <style name ="positive_button" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/normal_blue</item>
+        <item name="colorControlHighlight">@color/selected_blue</item>
+        <item name="android:textColor">@color/white_text_color</item>
+<!--        <item name="colorAccent">@color/selected_blue</item>-->
+    </style>
+
+    <!-- Skip Button -->
+    <style name ="skip_button" parent = "Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/normal_red</item>
+        <item name="colorControlHighlight">@color/selected_red</item>
+        <item name="android:textColor">@color/grey_text_color</item>
+    </style>
+
+</resources>
