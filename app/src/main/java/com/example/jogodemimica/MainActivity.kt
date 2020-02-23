@@ -9,12 +9,16 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.jogodemimica.databinding.ActivityMainBinding
 
+
+/**This class is the host for all fragments*/
 class MainActivity : AppCompatActivity() {
 
     //TODO
     // (1) Navigate using the buttons
     // (2) GameViewModel and Live Data
     // (3) Add Timer
+    // (4) When 10 seconds elapsed Changed the timer color
+    // (5) String Formats
     private lateinit var binding : ActivityMainBinding
     private lateinit var drawerLayout: DrawerLayout
     override fun onCreate(savedInstanceState: Bundle?)
