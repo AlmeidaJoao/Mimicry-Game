@@ -12,8 +12,12 @@
     <string name="the_word_is">A palavra é</string>
     <string name="rules_text">
         Para iniciar o jogo pressione no botao JOGAR,
-    cada equipa devera escolher uma pessoa para segurar e tentar adivinhar a palavra
-    o telemovel devera ser posicionado num lugar onde a pessoa segurando o telemovel
-    nao o possa ver de preferencia na testa. Para  cada palavra certa +1 ponto e errada -1. Good Luck</string>
+    cada equipa devera escolher uma pessoa para segurar e tentar
+        \n adivinhar a palavra
+    o telemovel devera ser posicionado num lugar onde a pessoa segurando
+        \no telemovel
+    nao o possa ver de preferencia na testa. Para  cada palavra certa +1 ponto
+        \n e errada -1. Good Luck</string>
+
 
 </resources>

@@ -55,7 +55,7 @@
       android:layout_marginStart="16dp"
       android:layout_marginEnd="16dp"
       android:layout_marginBottom="16dp"
-      android:text="TextView"
+      android:text="@{gameViewModel._currentTimeString}"
       app:layout_constraintBottom_toTopOf="@+id/guideline3"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
@@ -86,12 +86,14 @@
       android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
       android:text="@string/skip_button"
+        android:theme="@style/skip_button"
       android:onClick="@{()->gameViewModel.onSkip()}"
       app:layout_constraintBaseline_toBaselineOf="@+id/next_button"
       app:layout_constraintStart_toStartOf="parent" />
 
     <Button
       android:id="@+id/next_button"
+        android:theme="@style/positive_button"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginEnd="16dp"

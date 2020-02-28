@@ -32,5 +32,12 @@
           android:id="@+id/action_scoreFragment_to_gameFragment"
           app:destination="@id/gameFragment"
           app:popUpTo="@+id/titleFragment" />
+        <argument
+            android:name="finalScore"
+            app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/instructionsFragment"
+        android:name="com.example.jogodemimica.screens.Instructions.InstructionsFragment"
+        android:label="@string/instructions" />
 </navigation>

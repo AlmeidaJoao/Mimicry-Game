@@ -3,6 +3,8 @@ package com.example.jogodemimica
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -14,10 +16,10 @@ import com.example.jogodemimica.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     //TODO
-    // (2) GameViewModel and Live Data
-    // (3) Add Timer
-    // (4) When 10 seconds elapsed Changed the timer color
-    // (5) Share Activity
+    // Navigate using volume keys
+    // Use dataBinding and safeargs
+    // Check issues
+    // Options on drawerLayout
     private lateinit var binding : ActivityMainBinding
     private lateinit var drawerLayout: DrawerLayout
     override fun onCreate(savedInstanceState: Bundle?)
@@ -32,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this,navController,drawerLayout)
         NavigationUI.setupWithNavController(binding.navView,navController)
 
-        //Navigation Listener
+        /***Navigation Listener*/
         navController.addOnDestinationChangedListener{controller, destination,_ ->
             when(destination.id)
             {
@@ -47,4 +49,13 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.myNavHostFragment)
         return NavigationUI.navigateUp(navController,drawerLayout)
     }
+
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean
+//    {
+//        when(item.itemId)
+//        {
+//            R.id.addNew -> Toast.makeText(applicationContext,"Brevemente ...",Toast.LENGTH_SHORT).show()
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
 }
