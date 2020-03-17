@@ -15,7 +15,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-
 import com.example.jogodemimica.R
 import com.example.jogodemimica.databinding.GameFragmentBinding
 
