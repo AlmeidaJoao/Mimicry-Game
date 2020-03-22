@@ -33,8 +33,7 @@ class ScoreFragment : Fragment() {
         return binding.root
     }
 
-    fun navigate()
-    {
+    fun navigate() {
         findNavController().navigate(ScoreFragmentDirections.actionScoreFragmentToGameFragment())
     }
 
@@ -42,13 +41,13 @@ class ScoreFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.share_menu,menu)
-        if(getShareIntent().resolveActivity(activity!!.packageManager) == null)
+        if(getShareIntent().resolveActivity(activity!!.packageManager) == null) {
             menu.findItem(R.id.share_menu).isVisible = false
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId)
-        {
+        when(item.itemId) {
             R.id.share_menu -> share()
         }
         return super.onOptionsItemSelected(item)
@@ -57,6 +56,5 @@ class ScoreFragment : Fragment() {
     fun getShareIntent() = ShareCompat.IntentBuilder.from(this.requireActivity()).setText("...").setType("text/plain").intent
 
     fun share() = startActivity(getShareIntent())
-
 
 }

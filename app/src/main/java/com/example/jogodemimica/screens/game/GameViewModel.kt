@@ -17,17 +17,17 @@ private val GAME_OVER_PATTERN = longArrayOf(0,1898)
 class GameViewModel : ViewModel()
 {
 
-  /**Enum to represent the constants*/
-  enum class VibrationType(val vibrationEffect: LongArray)
-  {
+  /**
+   *Enum to represent the constants
+   */
+  enum class VibrationType(val vibrationEffect: LongArray) {
     NO_VIBRATION(NO_VIBRATION_PATTERN),
     TIC_TAC_VIBRATION(TIC_TAC_PATTERN),
     CORRECT_VIBRATION(CORRECT_VIBRATION_PATTERN),
     GAME_OVER_VIBRATION(GAME_OVER_PATTERN)
   }
 
-  companion object
-  {
+  companion object {
     const val TOTAL_TIME = 60000L
     const val ONE_SECOND = 1000L
     const val LOW_TIME = 10L
@@ -36,7 +36,9 @@ class GameViewModel : ViewModel()
 
   private val timer: CountDownTimer
 
-  /** List of words to be used */
+  /**
+   *List of words to be used
+   */
   val listOfWords = mutableListOf("Banana",
       "Mobile",
       "Phone",
@@ -59,32 +61,35 @@ class GameViewModel : ViewModel()
       "Teclado",
       "Mouse")
 
-  /**Live Data*/
+  /**
+   *Live Data
+  */
 
   val _vibrationEffect = MutableLiveData<VibrationType>()
   val vibrationEffect: LiveData<VibrationType>
     get() = _vibrationEffect
 
-  //the word to be shown
+  // The word to be shown
   val _word = MutableLiveData<String>()
   val word: LiveData<String>
     get() = _word
 
-  //when runs out time
+  // When runs out time
   val _outOfTime = MutableLiveData<Boolean>()
   val outOfTime: LiveData<Boolean>
-    get() = _outOfTime
+  get() = _outOfTime
+  
   // The score to be shown
   val _score = MutableLiveData<Int>()
   val score: LiveData<Int>
     get() = _score
 
-  //is game finished
+  // Is game finished
   val _isGameOver = MutableLiveData<Boolean>()
   val isGameOver: LiveData<Boolean>
     get() = _isGameOver
 
-  //time variable
+  // Time variable
   val _currentTime = MutableLiveData<Long>()
   val currentTime: LiveData<Long>
     get() = _currentTime
@@ -93,26 +98,21 @@ class GameViewModel : ViewModel()
   val _currentTimeString = Transformations.map(_currentTime, { time ->
     DateUtils.formatElapsedTime(time) })
 
-  init
-  {
+  init {
     _score.value = 0
     _word.value = "Almeida"
     _isGameOver.value = false
     _outOfTime.value = false
 
-    timer = object : CountDownTimer(TOTAL_TIME, ONE_SECOND)
-    {
-      override fun onTick(millisUntilFinished: Long)
-      {
+    timer = object : CountDownTimer(TOTAL_TIME, ONE_SECOND) {
+      override fun onTick(millisUntilFinished: Long) {
         _currentTime.value = (millisUntilFinished / ONE_SECOND)
-        if (millisUntilFinished / ONE_SECOND <= LOW_TIME)
-        {
+        if (millisUntilFinished / ONE_SECOND <= LOW_TIME) {
           _outOfTime.value = true
           _vibrationEffect.value = VibrationType.TIC_TAC_VIBRATION
         }
       }
-      override fun onFinish()
-      {
+      override fun onFinish() {
         _currentTime.value = DONE
         _vibrationEffect.value = VibrationType.GAME_OVER_VIBRATION
         _isGameOver.value = true
@@ -121,49 +121,45 @@ class GameViewModel : ViewModel()
     timer.start()
   }
 
-  /** Button Listeners */
+  /** 
+   *Button Listeners
+   */
   @RequiresApi(Build.VERSION_CODES.O)
-  fun onCorrect()
-  {
+  fun onCorrect() {
     _score.value = _score.value?.plus(1)
     _vibrationEffect.value = VibrationType.CORRECT_VIBRATION
     randomize()
   }
 
-  fun onSkip()
-  {
+  fun onSkip() {
     randomize()
     _score.value = _score.value?.minus(1)
   }
 
-  /** In case of a rematch the state of the gamefinished has to be reset*/
-  fun gameDone()
-  {
+  /** 
+   *In case of a rematch the state of the gamefinished has to be reset 
+   */
+  fun gameDone() {
     _isGameOver.value = false
     _vibrationEffect.value = VibrationType.NO_VIBRATION
   }
 
-  fun vibrationComplete()
-  {
+  fun vibrationComplete() {
     _vibrationEffect.value = VibrationType.NO_VIBRATION
   }
 
-
-  /** Randomizes the words*/
-  fun randomize()
-  {
-    if (listOfWords.isEmpty())
-    {
+  /**
+   *Randomizes the words
+   */
+  fun randomize() {
+    if (listOfWords.isEmpty()) {
       _isGameOver.value = true
       _vibrationEffect.value = VibrationType.GAME_OVER_VIBRATION
     }
-    else
-    {
+    else {
       _word.value = listOfWords.removeAt(0)
       listOfWords.shuffle()
     }
   }
 
 }
-
-
