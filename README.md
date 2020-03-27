@@ -1,13 +1,32 @@
 # Mimicry-Game
+
 A simple, mimicry game showing the concepts I've just learned'
 
-### Description
-It's a simple that displays random words. The one holding the 
-has to guess all words being displayed, the other player has
-to explain what is written without saying it.
+## Getting Started
 
-# Screenshots
+In order to get the test the project in your machine and testing pursoses, follow the notes below.
 
-![Title Screen](https://github.com/AlmeidaJoao/Mimicry-Game/blob/master/screenshots/Screenshot_20200322-220737_Jogo%20de%20Mimica.jpg)
-![Game Screen](https://github.com/AlmeidaJoao/Mimicry-Game/blob/master/screenshots/Screenshot_20200322-220750_Jogo%20de%20Mimica.jpg)
-![Instructions Screen](https://github.com/AlmeidaJoao/Mimicry-Game/blob/master/screenshots/Screenshot_20200322-220810_Jogo%20de%20Mimica.jpg)
+### Prerequisites
+
+To run/test the project you we will need:
+```
+Android Studio 3.5 or latest
+```
+## Built With
+
+* [Kotlin](https://kotlinlang.org/)- The programming language used
+
+## Versioning
+
+I use [GitHub](https://github.com/) for versioning.
+
+## Authors
+
+* **Almeida de Almeida** - *Initial work* - [AlmeidaJoao](https://github.com/AlmeidaJoao)
+
+See also the list of [contributors](https://github.com/AlmeidaJoao/Mimicry-Game/graphs/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
